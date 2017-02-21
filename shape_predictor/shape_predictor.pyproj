@@ -5,13 +5,16 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f561a550-8f7a-49e6-91e2-7ead69ec0ad2</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>shape_predictor.py</StartupFile>
+    <StartupFile>predict_shape_predictor.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>shape_predictor</Name>
     <RootNamespace>shape_predictor</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <CommandLineArguments>shape_predictor_68_face_landmarks.dat ..\..\dlib-19.1\examples\faces</CommandLineArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,7 +25,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="shape_predictor.py" />
+    <Compile Include="realtime_shape_predictor.py" />
+    <Compile Include="predict_shape_predictor.py" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
