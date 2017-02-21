@@ -1,6 +1,4 @@
-import os
 import sys
-import glob
 
 import dlib
 import cv2
