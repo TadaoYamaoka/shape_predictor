@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f561a550-8f7a-49e6-91e2-7ead69ec0ad2</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>predict_shape_predictor.py</StartupFile>
+    <StartupFile>realtime_shape_predictor.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -13,7 +13,7 @@
     <Name>shape_predictor</Name>
     <RootNamespace>shape_predictor</RootNamespace>
     <LaunchProvider>Standard Python launcher</LaunchProvider>
-    <CommandLineArguments>shape_predictor_68_face_landmarks.dat ..\..\dlib-19.1\examples\faces</CommandLineArguments>
+    <CommandLineArguments>shape_predictor_68_face_landmarks.dat</CommandLineArguments>
     <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">

@@ -1,17 +1,21 @@
-import sys
+import argparse
 
 import dlib
 import cv2
 
-if len(sys.argv) != 2:
-    print("realtime_shape_predictor.py model")
-    exit()
-model = sys.argv[1]
+parser = argparse.ArgumentParser(description='Realtime shape predictor')
+parser.add_argument('model', type=str, help='model file')
+parser.add_argument('--output', '-o', type=str, help='output avi format file')
+args = parser.parse_args()
 
-predictor = dlib.shape_predictor(model)
+predictor = dlib.shape_predictor(args.model)
 detector = dlib.get_frontal_face_detector()
 
 video_capture = cv2.VideoCapture(1)
+
+if args.output is not None:
+    fourcc = cv2.VideoWriter_fourcc(*'XVID')
+    out = cv2.VideoWriter(args.output, fourcc, 12, (640, 480))
 
 while True:
     ret, frame = video_capture.read()
@@ -26,6 +30,10 @@ while True:
             cv2.circle(frame, (p.x, p.y), 3, (0, 0, 255), 1)
             
     cv2.imshow('Video', frame)
+
+    if args.output is not None:
+        out.write(frame)
+
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
