@@ -27,7 +27,7 @@ while True:
         # Draw the face landmarks on the screen.
         for i in range(shape.num_parts):
             p = shape.part(i)
-            cv2.circle(frame, (p.x, p.y), 3, (0, 0, 255), 1)
+            cv2.circle(frame, (p.x, p.y), 2, (0, 0, 255), 1)
             
     cv2.imshow('Video', frame)
 
@@ -38,4 +38,6 @@ while True:
         break
 
 video_capture.release()
+if args.output is not None:
+    out.release()
 cv2.destroyAllWindows()
